@@ -1,0 +1,15 @@
+Exercises
+
+A. Write a function that fills an array of size N with the numbers from 1 to N in random order without duplicates
+
+Refrain from using shuffling algorithms or framework provided methods
+
+B. Without using framework provided methods such as Count, Getlem or similar, write a method which would return the Nth element from the end of a generic type singly linked list, in one pass.
+
+The method will take 2 parameters:
+
+ the index N from the end of the list
+
+ the generic singly linked list
+
+For example, given N = 5 and the list of integers {82, 55, 78, 92, 12, 44, 51}, the method should return 78.
