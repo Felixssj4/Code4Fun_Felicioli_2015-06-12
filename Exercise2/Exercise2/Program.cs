@@ -10,13 +10,39 @@ namespace Exercise2
     {
         static void Main(string[] args)
         {
-            List<int> l = new List<int>() { 1, 2, 3, 4, 5 };
+            List<int> li = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            List<double> ld = new List<double>() { 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10 };
+            List<string> ls = new List<string>() { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
             
-            LinkedList<int> ll = new LinkedList<int>(l);
+            LinkedList<int> lli = new LinkedList<int>(li);
+            LinkedList<double> lld = new LinkedList<double>(ld);
+            LinkedList<string> lls = new LinkedList<string>(ls);
+            
+            try 
+            { 
+                Console.Write(GetNthElemntOfList(4, lli).ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+
+            Console.Write("\r\n");
+
+            try
+            {
+                Console.Write(GetNthElemntOfList(6, lld).ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+
+            Console.Write("\r\n");
 
             try 
             { 
-                Console.Write(GetNthElemntOfList(0, ll).ToString());
+                Console.Write(GetNthElemntOfList(8, lls).ToString());
             }
             catch (Exception ex)
             {
