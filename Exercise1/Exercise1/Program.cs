@@ -10,8 +10,18 @@ namespace Exercise1
     {
         static void Main(string[] args)
         {
-            int n = 25;
+            int n = 50;
+
+            Console.Write("Random Array\r\n\r\n");
+
             int[] arr = RandomArray(n);
+            for (int x = 0; x < n; x++)
+                Console.Write(arr[x] + " ");
+
+            arr = arr.OrderBy(x => x).ToArray();
+
+            Console.Write("\r\n\nRight Array\r\n\r\n");
+
             for (int x = 0; x < n; x++)
                 Console.Write(arr[x] + " ");
 
@@ -40,7 +50,6 @@ namespace Exercise1
                 app.RemoveAt(rndIndex);
                 index++;
             }
-
             return array;
         }
     }
