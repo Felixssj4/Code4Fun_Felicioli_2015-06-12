@@ -20,7 +20,7 @@ namespace Exercise1
 
             arr = arr.OrderBy(x => x).ToArray();
 
-            Console.Write("\r\n\nRight Array\r\n\r\n");
+            Console.Write("\r\n\nRight Array \r\n\r\n");
 
             for (int x = 0; x < n; x++)
                 Console.Write(arr[x] + " ");
