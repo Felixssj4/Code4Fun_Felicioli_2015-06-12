@@ -12,23 +12,36 @@ namespace Exercise1
         {
             int n = 50;
 
-            Console.Write("Random Array\r\n\r\n");
+            Console.Write("Random Array 1\r\n\r\n");
 
-            int[] arr = RandomArray(n);
+            int[] arr1 = RandomArrayWithList(n);
             for (int x = 0; x < n; x++)
-                Console.Write(arr[x] + " ");
+                Console.Write(arr1[x] + " ");
 
-            arr = arr.OrderBy(x => x).ToArray();
+            arr1 = arr1.OrderBy(x => x).ToArray();
 
-            Console.Write("\r\n\nRight Array \r\n\r\n");
+            Console.Write("\r\n\nRight Array 1\r\n\r\n");
 
             for (int x = 0; x < n; x++)
-                Console.Write(arr[x] + " ");
+                Console.Write(arr1[x] + " ");
+
+            Console.Write("\r\n\r\nRandom Array 2\r\n\r\n");
+
+            int[] arr2 = RandomArrayWithoutList(n);
+            for (int x = 0; x < n; x++)
+                Console.Write(arr2[x] + " ");
+
+            arr2 = arr2.OrderBy(x => x).ToArray();
+
+            Console.Write("\r\n\nRight Array 2\r\n\r\n");
+
+            for (int x = 0; x < n; x++)
+                Console.Write(arr2[x] + " ");
 
             Console.ReadKey();
         }
 
-        public static int[] RandomArray(int N)
+        public static int[] RandomArrayWithList(int N)
         {
             int[] array = new int[N];
 
@@ -39,7 +52,7 @@ namespace Exercise1
                 app.Add(x);
             }
 
-            Random rnd = new Random();
+            Random rnd = new Random(int.Parse(Guid.NewGuid().ToString().Substring(0, 8), System.Globalization.NumberStyles.HexNumber));
             int rndIndex = 0;
             int index = 0;
 
@@ -49,6 +62,40 @@ namespace Exercise1
                 array[index] = app[rndIndex];
                 app.RemoveAt(rndIndex);
                 index++;
+            }
+            return array;
+        }
+
+        public static int[] RandomArrayWithoutList(int N)
+        {
+            int[] array = new int[N];
+
+            int[] app = new int[N];
+
+            for (int x = 1; x <= N; x++)
+            {
+                app[x-1] = (x);
+            }
+
+            Random rnd = new Random(int.Parse(Guid.NewGuid().ToString().Substring(0, 8), System.Globalization.NumberStyles.HexNumber));
+            int rndIndex = 0;
+            
+            for (int i = 0; i < N; i++)
+            {
+                int[] tmp = new int[N - i - 1];
+                rndIndex = rnd.Next(0, N - i - 1);
+                array[i] = app[rndIndex];
+                int k = 0;
+                for (int j = 0; j < (N - i); j++)
+                {
+                    if (app[j] != array[i])
+                    {
+                        tmp[k] = app[j];
+                        k++;
+                    }
+                }
+                app = new int[N - i - 1];
+                app = tmp;
             }
             return array;
         }
