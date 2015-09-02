@@ -17,8 +17,8 @@ namespace Exercise1
             int[] arr1 = RandomArrayWithList(n);
             for (int x = 0; x < n; x++)
                 Console.Write(arr1[x] + " ");
-
-            arr1 = arr1.OrderBy(x => x).ToArray();
+            /*gbcgbsb*/
+            arr1 = arr1.OrderBy(x => x).ToArray(); 
 
             Console.Write("\r\n\nRight Array 1\r\n\r\n");
 
