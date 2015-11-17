@@ -10,7 +10,7 @@ namespace Exercise1
     {
         static void Main(string[] args)
         {
-            int n = 50;
+            int n = 30;
 
             Console.Write("Random Array 1\r\n\r\n");
 
@@ -18,7 +18,7 @@ namespace Exercise1
             for (int x = 0; x < n; x++)
                 Console.Write(arr1[x] + " ");
             /*gbcgbsb*/
-            arr1 = arr1.OrderBy(x => x).ToArray(); 
+            arr1 = arr1.OrderBy(x => x).ToArray();
 
             Console.Write("\r\n\nRight Array 1\r\n\r\n");
 
@@ -79,7 +79,7 @@ namespace Exercise1
 
             Random rnd = new Random(int.Parse(Guid.NewGuid().ToString().Substring(0, 8), System.Globalization.NumberStyles.HexNumber));
             int rndIndex = 0;
-            
+
             for (int i = 0; i < N; i++)
             {
                 int[] tmp = new int[N - i - 1];
