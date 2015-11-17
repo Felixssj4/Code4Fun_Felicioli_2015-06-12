@@ -10,7 +10,7 @@ namespace Exercise1
     {
         static void Main(string[] args)
         {
-            int n = 30;
+            int n = 40;
 
             Console.Write("Random Array 1\r\n\r\n");
 
